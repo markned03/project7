@@ -1,0 +1,24 @@
+<h1>Test#index</h1>
+<p>Find me in app/views/test/index.html.erb</p>
+
+<p>
+<% @imiona.each do |imie| %>
+<%= "Witaj w kursie #{imie.capitalize} kobieto!"%>
+<hr>
+<br> 
+<% end %>
+
+
+</p>	
+
+<p>
+	<%= link_to('link do strony nawigacja', {:action=>'nawigacja', :id=>2, :strona=>3}) %>
+</p>
+
+<p>
+	Parametr ID = <%= @id + 1 %>
+</p>	
+
+<hr>
+	<%= params.inspect %>
+<hr>

@@ -1,0 +1,17 @@
+
+<p>
+	<a href="nawigacja">Nawigacja link</a>
+</p>
+<p>
+	<%= link_to('link do strony index', {:action=>'index', :id => 6, :strona => 9}) %>
+</p>
+
+<p>
+<%= "parametr id=" + params[:id] %>
+
+	</p>
+
+	<p>
+Strona = <%=   params[:strona].to_i+1 %>
+
+	</p>
