@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_164758) do
+ActiveRecord::Schema.define(version: 2019_06_14_173338) do
+
+  create_table "kategories", force: :cascade do |t|
+    t.string "nazwa"
+    t.integer "pozycja"
+    t.boolean "widoczna", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "uzytkowniks", force: :cascade do |t|
     t.string "imie", limit: 20
