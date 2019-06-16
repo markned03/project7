@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_14_173338) do
+ActiveRecord::Schema.define(version: 2019_06_16_211121) do
+
+  create_table "artykuls", force: :cascade do |t|
+    t.integer "strona_id"
+    t.string "nazwa"
+    t.integer "pozycja"
+    t.boolean "widoczny", default: true
+    t.text "zawartosc"
+    t.string "zdjecie_file_name"
+    t.string "zdjecie_content_type"
+    t.bigint "zdjecie_file_size"
+    t.datetime "zdjecie_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "galeries", force: :cascade do |t|
+    t.string "nazwa"
+    t.integer "pozycja"
+    t.text "opis"
+    t.boolean "widoczna", default: false
+    t.string "zdjecie_file_name"
+    t.string "zdjecie_content_type"
+    t.bigint "zdjecie_file_size"
+    t.datetime "zdjecie_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "kategories", force: :cascade do |t|
     t.string "nazwa"
@@ -18,6 +45,16 @@ ActiveRecord::Schema.define(version: 2019_06_14_173338) do
     t.boolean "widoczna", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stronas", force: :cascade do |t|
+    t.integer "kategorie_id"
+    t.string "nazwa"
+    t.integer "pozycja"
+    t.boolean "widoczna", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kategorie_id"], name: "index_stronas_on_kategorie_id"
   end
 
   create_table "uzytkowniks", force: :cascade do |t|
@@ -30,6 +67,20 @@ ActiveRecord::Schema.define(version: 2019_06_14_173338) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uzytkownik"], name: "index_uzytkowniks_on_uzytkownik"
+  end
+
+  create_table "zdjecies", force: :cascade do |t|
+    t.integer "galerie_id"
+    t.string "nazwa"
+    t.integer "pozycja"
+    t.boolean "widoczne", default: true
+    t.string "opis"
+    t.string "zdjecie_file_name"
+    t.string "zdjecie_content_type"
+    t.bigint "zdjecie_file_size"
+    t.datetime "zdjecie_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
