@@ -1,2 +1,14 @@
-<h1>Kategories#nowa</h1>
-<p>Find me in app/views/kategories/nowa.html.erb</p>
+<h1>Nowa Kategorie</h1>
+
+<%= link_to("Powrót", {:action => 'index'}) %>
+
+<%= form_for(:kategoria, :url => {:action => 'utworz'}) do |pole| %>
+
+<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+<div>
+	<%= submit_tag("Utworz") %>
+
+</div>
+
+<% end %>

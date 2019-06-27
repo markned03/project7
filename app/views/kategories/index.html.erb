@@ -1,6 +1,6 @@
 <h1>Kategorie</h1>
 
-<%= link_to("Dodaj nową kategorię", "#") %>
+<%= link_to("Dodaj nową kategorię", {:action => 'nowa'}) %>
 
 <p> Ilość kategorii: <%= @kategorie.size %> </p>
 
@@ -18,9 +18,9 @@
 		<th><%= kat.nazwa %></th>
 		<th><%= kat.widoczna ? 'Tak' : 'Nie' %></th>
 		<th><%= kat.stronas.size %></th>
-		<th><%= link_to("Pokaż", "#") %>
-			<%= link_to("Edycja", "#") %>
-			<%= link_to("Usuń", "#") %>
+		<th><%= link_to("Pokaż", {:action => 'pokaz', :id => kat.id}) %>
+			<%= link_to("Edycja", {:action => 'edycja', :id => kat.id}) %>
+			<%= link_to("Usuń", {:action => 'usun', :id => kat.id}) %>
 		</th>	
 	</tr>
 	<% end %>
