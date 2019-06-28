@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project7</title>
+    	<%= stylesheet_link_tag('application', :media => 'all')  %>
+		  <%= javascript_include_tag('application') %>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+
+  	<!-- główna -->
+<div class="container">
+    <%= yield %>
+</div>
+
+    <!-- stopka -->
+    <div id="footer">
+      <div class="container">
+        <p CCRWZ &copy; <a href="http://www.strefakursow.pl" target="_blank">http://www.ccrwz.pl</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
