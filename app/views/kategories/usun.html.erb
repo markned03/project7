@@ -1,15 +1,20 @@
+<div class="hero-unit">
+
+
 <h1>Usunięcie Kategorii</h1>
 
-<%= link_to("Powrót", {:action => 'index'}) %>
 
 <%= form_for(:kategoria, :url => {:action => 'kasuj', :id => @kategoria.id}) do |pole| %>
 
 <p>Czy napewno usunąć kategorię?</p>
-<p><%= @kategoria.nazwa %></p>
+<p class="text-warning"><%= @kategoria.nazwa %></p>
 
-<div>
-	<%= submit_tag("Usuń") %>
+<div style="text-align: center;">
+
+	<%= link_to("Anuluj", {:action => 'index'}, :class => 'btn btn-primary') %>
+	<%= submit_tag("Usuń", :class => 'btn btn-danger') %>
 
 </div>
 
 <% end %>
+</div>

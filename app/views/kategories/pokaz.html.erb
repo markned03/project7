@@ -1,9 +1,9 @@
+<div class="hero-unit">
+
+
 <h1>Pozaż Kategorię</h1>
 
-<%= link_to("Powrót", {:action => 'index'}) %>
-
-
-<table>
+<table class="table table-striped">
 	<tr>	
 		<th>Nazwa</th>
 		<th><%= @kategoria.nazwa %></th>
@@ -26,3 +26,8 @@
 	</tr>
 </table>
 
+<div style="text-align: center;">
+	<%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-primary') %>
+</div>
+
+</div>

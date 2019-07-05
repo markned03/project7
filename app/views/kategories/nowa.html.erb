@@ -1,14 +1,19 @@
+
+<div class="hero-unit">
 <h1>Nowa Kategorie</h1>
 
-<%= link_to("Powrót", {:action => 'index'}) %>
 
 <%= form_for(:kategoria, :url => {:action => 'utworz'}) do |pole| %>
 
 <%= render(:partial => "form", :locals => {:pole => pole}) %>
 
-<div>
-	<%= submit_tag("Utworz") %>
+<div style="text-align: center;">
+	<%= link_to("Anuluj", {:action => 'index'}, :class => 'btn btn-warning') %>
+
+	<%= submit_tag("Utwórz", :class => 'btn btn-primary') %>
 
 </div>
 
 <% end %>
+</div>
+

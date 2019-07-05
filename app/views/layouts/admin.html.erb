@@ -11,13 +11,18 @@
 
   	<!-- główna -->
 <div class="container">
+  <% if !flash[:notice].blank? %>
+  <div class="alert alert-success" style="text-align: center;">
+  <%= flash[:notice] %>
+</div>
+  <% end %>
     <%= yield %>
 </div>
 
     <!-- stopka -->
     <div id="footer">
       <div class="container">
-        <p CCRWZ &copy; <a href="http://www.strefakursow.pl" target="_blank">http://www.ccrwz.pl</a>
+        <p CCRWZ &copy; <a href="http://www.jezierzany.net.pl" target="_blank">http://www.jezierzany.net.pl</a>
         </p>
       </div>
     </div>
